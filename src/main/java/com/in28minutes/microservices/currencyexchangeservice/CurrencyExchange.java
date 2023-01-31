@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
  * @author earlharris
  */
 @Entity
-class CurrencyExchange {
+public class CurrencyExchange {
 
 	@Id
 	private Long id;
