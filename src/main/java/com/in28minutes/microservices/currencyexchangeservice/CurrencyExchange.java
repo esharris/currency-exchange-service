@@ -6,65 +6,77 @@ package com.in28minutes.microservices.currencyexchangeservice;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 /**
  *
  * @author earlharris
  */
+@Entity
 class CurrencyExchange {
-    private Long id;
-    private String from;
-    private String to;
-    private BigDecimal conversionMultiple;
-    private String environment;
 
-    public CurrencyExchange() {
-    }
+	@Id
+	private Long id;
 
-    public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
-        this.id = id;
-        this.from = from;
-        this.to = to;
-        this.conversionMultiple = conversionMultiple;
-    }
+	@Column(name = "currency_from")
+	private String from;
 
-    public Long getId() {
-        return id;
-    }
+	@Column(name = "currency_to")
+	private String to;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	private BigDecimal conversionMultiple;
+	private String environment;
 
-    public String getFrom() {
-        return from;
-    }
+	public CurrencyExchange() {
+	}
 
-    public void setFrom(String from) {
-        this.from = from;
-    }
+	public CurrencyExchange(Long id, String from, String to, BigDecimal conversionMultiple) {
+		this.id = id;
+		this.from = from;
+		this.to = to;
+		this.conversionMultiple = conversionMultiple;
+	}
 
-    public String getTo() {
-        return to;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setTo(String to) {
-        this.to = to;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public BigDecimal getConversionMultiple() {
-        return conversionMultiple;
-    }
+	public String getFrom() {
+		return from;
+	}
 
-    public void setConversionMultiple(BigDecimal conversionMultiple) {
-        this.conversionMultiple = conversionMultiple;
-    }
+	public void setFrom(String from) {
+		this.from = from;
+	}
 
-    public String getEnvironment() {
-        return environment;
-    }
+	public String getTo() {
+		return to;
+	}
 
-    public void setEnvironment(String environment) {
-        this.environment = environment;
-    }
-    
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public BigDecimal getConversionMultiple() {
+		return conversionMultiple;
+	}
+
+	public void setConversionMultiple(BigDecimal conversionMultiple) {
+		this.conversionMultiple = conversionMultiple;
+	}
+
+	public String getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+	}
+
 }
